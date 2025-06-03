@@ -387,3 +387,17 @@ int32_t main (void)
 	}
 }
 12.	Using putty make a remote connection to raspberry pi and write a python program to blink a LED
+
+import RPi.GPIO as GPIO
+from time import sleep
+
+GPIO.setwarnings(False)
+GPIO.setmode(GPIO.BOARD)
+GPIO.setup(7, GPIO.OUT)
+
+while True:
+    GPIO.output(7, GPIO.HIGH)
+    sleep(1)
+    GPIO.output(7, GPIO.LOW)
+    sleep(1)
+
